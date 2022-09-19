@@ -1,0 +1,46 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div{
+    position: relative;
+    width: 60px;
+    height: 250px;
+    background-color: #b1060f;
+    z-index: 1;
+}
+div::before{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 250px;
+    background-color: #b1060f;
+    left: 90px;
+}
+
+div::after{
+    content: '';
+    position: absolute;
+    width: 175px;
+    height: 20px;
+    left: -15px;
+    bottom: -10px;
+    background-color: #222;
+    border-radius: 50%;
+}
+
+span{
+    position: absolute;
+    width: 60px;
+    height: 250px;
+    background-color: #e50913;
+    left: 46px;
+    transform: skew(20deg);
+}

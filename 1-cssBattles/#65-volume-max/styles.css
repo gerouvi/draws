@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 10px solid blue;
+    box-shadow: 
+    0px 0px 0px 10px white,
+    0px 0px 0px 20px blue,
+    0px 0px 0px 30px white,
+    0px 0px 0px 40px blue;
+}
+.half-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    height: 100%;
+    width: 50%;
+}
+.square{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-105%);
+    width: 200px;
+    height: 180px;
+    border: 80px solid transparent;
+    border-right: 80px solid blue;
+
+}
+.small-square{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-230%);
+    width: 50px;
+    height: 36px;
+    background-color: blue;
+    border-radius: 10px;
+}

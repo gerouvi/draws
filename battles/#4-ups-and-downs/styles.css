@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #62306d;
+}
+[class^="obj"]{
+    width: 100px;
+    height: 100px;
+    background-color: #f7ec70;
+}
+.obj-down{
+    transform: translateY(50%);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.obj-up{
+    transform: translateY(-50%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}

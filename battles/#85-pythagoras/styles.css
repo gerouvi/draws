@@ -1,0 +1,41 @@
+*,
+*::before,
+*:after{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    margin: 0;
+    font-size: 30px;
+}
+.box{
+    position: relative;
+    width: 3.3em;
+    height: 3.3em;
+    background-color: bisque;
+}
+.box:before{
+    content: "";
+    position: absolute;
+    height: 1.65em;
+    width: 1.66em;
+    top: -1.66em;
+    left: -1.66em;
+    background-color: aquamarine;
+    transform: rotate(30deg);
+    transform-origin: 100% 100%;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    height: 2.89em;
+    width: 2.89em;
+    top: -2.89em;
+    right: 0em;
+    background-color: aquamarine;
+    transform: rotate(30deg);
+    transform-origin: 100% 100%;
+}

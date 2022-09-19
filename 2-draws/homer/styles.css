@@ -1,0 +1,480 @@
+:root{
+    --simpsons-yellow: rgb(255,217,15);
+    --homer-beard: rgb(209,178,112);
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.homer{
+    opacity: 1;
+    position: relative;
+    width: 350px;
+    height: 430px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+[class*="homer__hair-top"]{
+    position: absolute;
+    width: 73px;
+    height: 38px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 1;
+}
+.homer__hair-top--right{
+    top: 4px;
+    left: 100px;
+    transform: rotate(-25deg);
+}
+.homer__hair-top--left{
+    top: 5px;
+    left: 73px;
+    transform: rotate(-33deg);
+}
+.homer__head{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    width: 190px;
+    height: 160px;
+    background-color: rgb(255,217,15);
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50% 50% 0 0 / 70% 60% 0 0;
+    transform: rotate(-20deg);
+}
+
+.homer__head::after{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: -9px;
+    width: 60px;
+    height: 50px;
+    background-color: rgb(255,217,15);
+    border: 3px solid transparent;
+    border-right: 3px solid black;
+    border-radius: 50%;
+}
+[class*="homer__eye"]{
+    position: absolute;
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 50%;
+}
+.homer__eye-left{
+    left: 120px;
+    top: 135px;
+    width: 90px;
+    height: 90px;
+    z-index: 2;
+}
+.homer__eye-left::after{
+    content: "";
+    position: absolute;
+    top: 47px;
+    left: 36px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.homer__eye-right{
+    left: 190px;
+    top: 130px;
+    width: 83px;
+    height: 83px;
+}
+.homer__eye-right::after{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+.homer__nose{
+    position: absolute;
+    top: 195px;
+    right: 87px;
+    width: 55px;
+    height: 33px;
+    background-color: rgb(255,217,15);
+    border: 3px solid black;
+    border-left: none;
+    border-radius: 0 30% 30% 0 / 0 50% 50% 0;
+    transform: rotate(-8deg);
+    z-index: 1;
+}
+.homer__nose::before{
+    content: "";
+    position: absolute;
+    top: 27.5px;
+    left: -30px;
+    width: 8px;
+    height: 3px;
+    background-color: black;
+}
+
+.homer__face-top{
+    position: absolute;
+    top: 180px;
+    left: 87px;
+    width: 130px;
+    height: 58px;
+    background-color: var(--simpsons-yellow);
+    border-left: 3px solid black;
+    transform: rotate(-18deg);
+    z-index: -1;
+}
+.homer__ear{
+    position: absolute;
+    top: 216px;
+    left: 70px;
+    width: 40px;
+    height: 43px;
+    background-color: var(--simpsons-yellow);
+    border: 3px solid black;
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    transform: rotate(-5deg);
+}
+.homer__ear::before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    transform: rotate(12deg);
+}
+.homer__ear::after{
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 20px;
+    height: 22px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid black;
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    transform: rotate(30deg);
+}
+[class*="homer__hair-middle"]{
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background-color: black;
+}
+.homer__hair-middle--one{
+    top: 172px;
+    left: 60px;
+    transform: rotate(-12deg);
+}
+.homer__hair-middle--two{
+    top: 167px;
+    left: 70px;
+    transform: rotate(-35deg);
+}
+.homer__hair-middle--three{
+    top: 162px;
+    left: 85px;
+    transform: rotate(4deg);
+}
+.homer__hair-middle--four{
+    top: 160px;
+    left: 96px;
+    transform: rotate(-20deg);
+}
+.homer__face-middle{
+    position: absolute;
+    top: 220px;
+    left: 95px;
+    width: 120px;
+    height: 70px;
+    background-color: var(--simpsons-yellow);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+.homer__beard{
+    position: absolute;
+    top: 233px;
+    left: 120px;
+    width: 120px;
+    height: 120px;
+    background-color: var(--homer-beard);
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.homer__beard::before{
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 60px;
+    width: 99px;
+    height: 58px;
+    background-color: var(--homer-beard);
+    border: 3px solid black;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-radius: 0 30% 0 0 / 0 80% 0 0;
+    transform: rotate(-10deg);
+}
+
+.homer__beard::after{
+    content: "";
+    position: absolute;
+    top: 64px;
+    left: 105px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--homer-beard);
+    border: 3px solid transparent;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom-right-radius: 100%;
+    transform: rotate(-5deg);
+}
+.homer__smile{
+    position: absolute;
+    top: 253px;
+    left: 143px;
+    width: 150px;
+    height: 50px;
+    background-color: var(--homer-beard);
+    border: 3px solid transparent;
+    border-bottom: 3px solid black;
+    border-radius: 50%;
+    
+}
+.homer__smile::before{
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 6px;
+    width: 30px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-left: 3px solid black;
+    border-radius: 50%;
+    transform: rotate(25deg);
+}
+.homer__beardFrontRoundedCircle{
+    position: absolute;
+    top: 250px;
+    left: 277px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    overflow: hidden;
+}
+.homer__beardFrontRounded{
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    width: 40px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+.homer__neck{
+    position: absolute;
+    top: 260px;
+    left: 87px;
+    width: 122px;
+    height: 120px;
+    background-color: var(--simpsons-yellow);
+    transform: rotate(12deg);
+    z-index: -1;
+}
+.homer__neck::before{
+    content: "";
+    position: absolute;
+    left: -8px;
+    width: 10px;
+    height: 130px;
+    border: 3px solid transparent;
+    border-right: 3px solid black;
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+}
+.homer__neck::after{
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5.5px;
+    width: 10px;
+    height: 128px;
+    border: 3px solid transparent;
+    border-left: 3px solid black;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+}
+.homer__chest{
+    position: absolute;
+    top: 365px;
+    left: 182px;
+    width: 30px;
+    height: 80px;
+    background-color: var(--simpsons-yellow);
+    transform: rotate(-35deg);
+    z-index: -2;
+}
+.homer__chest::after{
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 19px;
+    width: 13px;
+    height: 33px;
+    border: 3px solid transparent;
+    border-right: 3px solid black;
+    border-top: 3px solid black;
+    border-radius: 0 100% 0 0 / 0 50% 0 0;
+}
+.homer__poloNeck{
+    position: absolute;
+    bottom: 16px;
+    right: 123px;
+    width: 52px;
+    height: 52px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    transform: rotate(-60deg) skew(-20deg);
+}
+.homer__poloNeck::before{
+    content: "";
+    position: absolute;
+    left: -12px;
+    width: 8px;
+    height: 80px;
+    background-color: white;
+    
+}
+.homer__poloCuelloIzq{
+    position: absolute;
+    bottom: 16px;
+    left: 41px;
+    width: 122px;
+    height: 57px;
+    background-color: white;
+    border: 3px solid transparent;
+    border-right: 3px solid black;
+    transform: rotate(25deg);
+}
+.homer__poloCuelloIzq::before{
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: -5px;
+    width: 25px;
+    height: 70px;
+    border: 3px solid black;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 80% 0 0 0 / 25% 0 0 0;
+}
+.homer__poloCuelloIzq::after{
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: 0px;
+    width: 120px;
+    height: 70px;
+    border: 3px solid black;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-radius: 0 0 0 30% / 0 0 0 12%;
+}
+.homer__shoulder{
+    position: absolute;
+    bottom: -75px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 50%;
+    transform: rotate(20deg);
+}
+.homer__shoulder::before{
+    content: "";
+    position: absolute;
+    left: 33px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid black;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    transform: rotate(3deg);
+}
+.homer__shoulder::after{
+    content: "";
+    position: absolute;
+    top: -83px;
+    left: 24px;
+    width: 120px;
+    height: 70px;
+    border: 3px solid black;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-radius: 0 0 0 30% / 0 0 0 12%;
+    transform: rotate(5deg);
+}
+.homer__poloChestDer{
+    position: absolute;
+    bottom: -18px;
+    right: 104px;
+    width: 40px;
+    height: 30px;
+    background-color: white;
+    border: 0px solid transparent;
+    border-top: 3px solid black;
+    transform: rotate(55deg) skew(25deg);
+}
+
+.homer__poloCuelloDer{
+    position: absolute;
+    bottom: 5px;
+    right: 99px;
+    width: 26px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    transform: skew(28deg) rotate(6deg);
+}
+.homer__poloCuelloDer2{
+    position: absolute;
+    bottom: 62px;
+    right: 106px;
+    width: 45px;
+    height: 0;
+    border: 0px solid transparent;
+    border-bottom: 3px solid black;
+    transform: rotate(32deg);
+}

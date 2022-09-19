@@ -1,0 +1,389 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #4caf50;
+  margin-top: 50px;
+}
+
+.viking {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*flex-direction: row;
+    justify-content: center;*/
+}
+
+.viking .helmet-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.viking .helmet-container .helmet-extras {
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.viking .helmet-container .helmet-extras::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: -7px;
+  border-left: 30px solid transparent;
+  border-top: 15px solid transparent;
+  border-right: 50px solid #80808d;
+  border-bottom: 50px solid transparent;
+}
+
+.viking .helmet-container .helmet-extras::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -7px;
+  border-left: 50px solid #80808d;
+  border-top: 15px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+.viking .helmet-container .horn-container {
+  position: absolute;
+  width: 200px;
+}
+
+.viking .helmet-container .horn-container .horn-base {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 30px;
+  background-color: #80808d;
+  margin: 0 10px;
+}
+
+.viking .helmet-container .horn-container .horn-base.left {
+  left: 3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.viking .helmet-container .horn-container .horn-base.right {
+  right: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.viking .helmet-container .horn-container .horn {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle 130px at 30% 30%, transparent 50%, #9999a6 50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.viking .helmet-container .horn-container .horn.left {
+  -webkit-transform: rotate(200deg);
+          transform: rotate(200deg);
+  left: -65px;
+  top: 3px;
+  -webkit-box-shadow: inset -5px -15px 10px 0 #80808d;
+          box-shadow: inset -5px -15px 10px 0 #80808d;
+}
+
+.viking .helmet-container .horn-container .horn.right {
+  -webkit-transform: rotate(250deg);
+          transform: rotate(250deg);
+  left: 135px;
+  top: 3px;
+  -webkit-box-shadow: inset -14px -5px 10px 0 #80808d;
+          box-shadow: inset -14px -5px 10px 0 #80808d;
+}
+
+.viking .helmet-container .helmet {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  background-color: #343448;
+  border-radius: 100px 100px 0 0;
+  overflow: hidden;
+}
+
+.viking .helmet-container .helmet .main {
+  width: 100%;
+  height: 100%;
+  background-color: #343448;
+}
+
+.viking .helmet-container .helmet-bottom {
+  position: relative;
+  width: 220px;
+  height: 30px;
+  background-color: #80808d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viking .helmet-container .helmet-bottom::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: -30px;
+  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-right: 15px solid #80808d;
+  border-bottom: 15px solid transparent;
+}
+
+.viking .helmet-container .helmet-bottom::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -30px;
+  border-left: 15px solid #80808d;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.viking .helmet-container .helmet-bottom .helmet-bottom-square {
+  width: 13px;
+  height: 13px;
+  background-color: #9999a6;
+  border-radius: 50%;
+}
+
+.viking .face-container {
+  position: absolute;
+  top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viking .face-container .face {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  background-color: #f5c7bf;
+  border-radius: 40% 40% 50% 50% / 45% 45% 45% 45%;
+}
+
+.viking .face-container .eyes {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viking .face-container .eyes .eye {
+  width: 65px;
+  height: 30px;
+  border-radius: 5px 5px 25px 25px / 8px 8px 20px 20px;
+  background-color: #eca496;
+}
+
+.viking .face-container .ears {
+  position: absolute;
+  top: 79px;
+  width: 115%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: -1;
+}
+
+.viking .face-container .ears .ear {
+  width: 30px;
+  height: 60px;
+  background-color: #eca496;
+}
+
+.viking .face-container .ears .ear.left {
+  border-radius: 22px 10px 0px 22px / 10px 40px 0px 10px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.viking .face-container .ears .ear.right {
+  border-radius: 10px 22px 22px 0px / 40px 10px 10px 0px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.viking .face-container .nouse {
+  position: absolute;
+  top: 80px;
+  width: 50px;
+  height: 80px;
+  -webkit-clip-path: polygon(70% 0, 90% 80%, 50% 100%, 10% 80%, 30% 0);
+          clip-path: polygon(70% 0, 90% 80%, 50% 100%, 10% 80%, 30% 0);
+  background-color: #eca496;
+  z-index: 1;
+}
+
+.viking .face-container .mouth {
+  position: absolute;
+  bottom: 30px;
+  width: 48px;
+  height: 20px;
+  background-color: #eca496;
+  border-radius: 50px 50px 50px 50px /5px 5px 20px 20px;
+}
+
+.viking .face-container .sideburns {
+  position: absolute;
+  top: 80px;
+  width: 220px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.viking .face-container .sideburns .sideburn.left {
+  border-right: 10px solid red;
+  border-top: 10px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+
+.viking .face-container .sideburns .sideburn.left::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  left: -15px;
+  top: 15px;
+}
+
+.viking .face-container .sideburns .sideburn.right {
+  border-left: 10px solid red;
+  border-top: 10px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+
+.viking .face-container .sideburns .sideburn::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  right: -15px;
+  top: 15px;
+}
+
+.viking .beard-container {
+  position: relative;
+  top: 70px;
+  width: 270px;
+  height: 150px;
+  border: 3px solid orange;
+  z-index: 1;
+}
+
+.viking .beard-container .moustache {
+  position: absolute;
+}
+
+.viking .beard-container .circle {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.viking .beard-container .circle.left {
+  left: -25px;
+  top: -20px;
+}
+
+.viking .beard-container .circle.center {
+  position: relative;
+  top: 50px;
+  left: 135px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.viking .beard-container .circle.right {
+  right: -25px;
+  top: -20px;
+}
+
+.viking .beard-container .small-circle {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #af3232;
+  border-radius: 50%;
+  z-index: 1;
+  top: 60px;
+  left: 33px;
+  z-index: -1;
+}
+/*# sourceMappingURL=styles.css.map */

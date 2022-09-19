@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    height: 100vh;
+}  
+.container{
+    padding: 20px;
+    width: 500px;
+    height: 380px;
+    background-color: #5c434c;
+} 
+.uno{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #f09492;
+    border-radius: 100px 0 0 0;
+    box-shadow: 
+    120px 0 0 0 #f5d6b4,
+    240px 0 0 0 #f09492,
+    360px 0 0 0 #f5d6b4;
+}
+.dos{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #f5d6b4;
+    border-radius: 100px 0 0 0;
+    box-shadow: 
+    120px 0 0 0 #f09492,
+    240px 0 0 0 #f5d6b4,
+    360px 0 0 0 #f09492;
+}
+.tres{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #f09492;
+    border-radius: 100px 0 0 0;
+    box-shadow: 
+    120px 0 0 0 #f5d6b4,
+    240px 0 0 0 #f09492,
+    360px 0 0 0 #f5d6b4;
+}

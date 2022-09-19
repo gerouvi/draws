@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #6592cf;
+}
+.rectangle{
+    /* position: absolute; */
+    width: 210px;
+    height: 110px;
+    background-color: #243d83;
+}
+.circle{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #eeb850;
+    box-shadow: 
+    0 0 0 35px #243d83,
+    0 0 0 70px #6592cf;
+}

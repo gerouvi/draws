@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0b2429;
+    
+}
+div{
+    width: 110px;
+    height: 110px;
+    background-color: #f3ac3c;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+div:before{
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: #f3ac3c;
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: translate(-100%, 100%);
+    box-shadow: 55px -55px 0 0px #998235;
+}

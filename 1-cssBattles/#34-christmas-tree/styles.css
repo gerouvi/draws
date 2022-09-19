@@ -1,0 +1,34 @@
+:root{
+    --bottom-border: 100px;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background-color: #007065;
+}
+[class ^= "square"]{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+
+}
+.square-1{
+    border-bottom: var(--bottom-border) solid #00a790;
+    transform: translate(-50%, 20px); /*+70% of this size*/
+}
+.square-2{
+    border-bottom: var(--bottom-border) solid #f5c181;
+    transform: translate(-50%, -50%);
+}
+.square-3{
+    border-bottom: var(--bottom-border) solid #ffeecf;
+    transform: translate(-50%, -120px);/*-70% of this size*/
+}

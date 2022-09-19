@@ -1,0 +1,300 @@
+$bg: #4caf50;
+$helmet-blue: #343448;
+$helmet-dark-gray: #80808d;
+$helmet-light-gray: #9999a6;
+$face-light: #f5c7bf;
+$face-dark: #eca496;
+$beard: red;
+@mixin ps{
+    content: "";
+    position: absolute;
+}
+@mixin box($w, $h){
+    width: $w;
+    height: $h;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: $bg;
+    margin-top: 50px;
+}
+.viking{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*flex-direction: row;
+    justify-content: center;*/
+    .helmet-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        .helmet-extras{
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+            &::before{
+                @include ps();
+                right: 50%;
+                top: -7px;
+                border-left: 30px solid transparent;
+                border-top: 15px solid transparent;
+                border-right: 50px solid $helmet-dark-gray;
+                border-bottom: 50px solid transparent;
+            }
+            &::after{
+                @include ps();
+                left: 50%;
+                top: -7px;
+                border-left: 50px solid $helmet-dark-gray;
+                border-top: 15px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 50px solid transparent;
+            }
+        }
+        .horn-container{
+            position: absolute;
+            width: 200px;
+            
+            .horn-base{
+                position: absolute;
+                top: 20px;
+                @include box(40px, 30px);
+                background-color: $helmet-dark-gray;
+                margin: 0 10px; 
+                &.left{
+                    left: 3px;
+                    transform: rotate(-45deg);
+                    
+                }
+                &.right{ 
+                    right: 3px;
+                    transform: rotate(45deg); 
+                }
+            }
+            
+            .horn{
+                position: absolute;
+                width: 130px;
+                height: 130px;
+                background: radial-gradient(circle 130px at 30% 30%, transparent 50%, $helmet-light-gray 50%);
+                border-radius: 50%;
+                z-index: -1;
+                
+                
+                &.left{
+                    transform: rotate(200deg);
+                    left: -65px;
+                    top: 3px;
+                    box-shadow:inset -5px -15px 10px 0 $helmet-dark-gray;
+                }
+                &.right{
+                    transform: rotate(250deg);
+                    left: 135px;
+                    top: 3px;
+                    box-shadow:inset -14px -5px 10px 0 $helmet-dark-gray;
+                }
+            }
+            
+        }  
+        .helmet{
+            position: relative;
+            @include box(200px, 100px);
+            background-color: $helmet-blue;
+            border-radius: 100px 100px 0 0;
+            overflow: hidden;
+            .main{
+                @include box(100%, 100%);
+                background-color: $helmet-blue;
+            }
+        }
+        .helmet-bottom{
+            
+            position: relative;
+            @include box(220px, 30px);
+            background-color: $helmet-dark-gray;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            &::before{
+                @include ps();
+                @include box(30px,30px);
+                left: -30px;
+                border-left: 15px solid transparent;
+                border-top: 15px solid transparent;
+                border-right: 15px solid $helmet-dark-gray;
+                border-bottom: 15px solid transparent;
+            }
+            &::after{
+                @include ps();
+                @include box(30px,30px);
+                right: -30px;
+                border-left: 15px solid $helmet-dark-gray;
+                border-top: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+            }
+            .helmet-bottom-square{
+                @include box(13px,13px);
+                background-color: $helmet-light-gray;
+                border-radius: 50%;
+            }
+        }
+    }
+    .face-container{
+        position: absolute;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .face{
+            position: relative;
+            @include box(200px, 220px);
+            background-color: $face-light;
+            border-radius: 40% 40% 50% 50% / 45% 45% 45% 45%;
+        }
+        .eyes{
+            position: absolute;
+            top: 70px;
+            @include box(100%, 30px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .eye{
+                @include box(65px, 30px);
+                border-radius: 5px 5px 25px 25px / 8px 8px 20px 20px;
+                background-color: $face-dark;
+            }
+        }
+        .ears{
+            position: absolute;
+            top: 79px;
+            @include box(115%, 70px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: -1;
+            .ear{
+                @include box(30px, 60px);
+                background-color: $face-dark;
+                &.left{
+                    border-radius: 22px 10px 0px 22px / 10px 40px 0px 10px;
+                    transform: rotate(-10deg);
+                }
+                &.right{
+                    border-radius: 10px 22px 22px 0px / 40px 10px 10px 0px;
+                    transform: rotate(10deg);
+                }
+            }
+
+        }
+        .nouse{
+            position: absolute;
+            top: 80px;
+            @include box(50px, 80px);
+            clip-path: polygon(70% 0, 90% 80%, 50% 100%, 10% 80%, 30% 0);
+            background-color: $face-dark;
+            z-index: 1;
+        }
+        .mouth{
+            position: absolute;
+            bottom: 30px;
+            @include box(48px, 20px);
+            background-color: $face-dark;
+            border-radius: 50px 50px 50px 50px /5px 5px 20px 20px;
+            
+        }
+        .sideburns{
+            position: absolute;
+            top: 80px;
+            @include box(220px, 30px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .sideburn {
+                
+                &.left{
+                    border-right: 10px solid $beard;
+                    border-top: 10px solid transparent;
+                    border-bottom: 30px solid transparent;
+
+                    &::before{
+                        @include ps();
+                        @include box(60px, 60px);
+                        border-radius: 50%;
+                        background-color: $beard;
+                        left: -15px;
+                        top: 15px;
+                    }
+                }
+                &.right{
+                    border-left: 10px solid $beard;
+                    border-top: 10px solid transparent;
+                    border-bottom: 30px solid transparent;
+                }
+                &::before{
+                    @include ps();
+                    @include box(60px, 60px);
+                    border-radius: 50%;
+                    background-color: $beard;
+                    right: -15px;
+                    top: 15px;
+                }
+            }
+
+        }
+    }
+    .beard-container{
+        position: relative;
+        top: 70px;
+        @include box(270px, 150px);
+        border: 3px solid orange;
+        z-index: 1;
+
+        .moustache{
+            position: absolute;
+            
+        }
+        .circle{
+            position: absolute;
+            @include box(130px, 130px);
+            background-color: $beard;
+            border-radius: 50%;
+            &.left{
+                left: -25px;
+                top: -20px;
+            }
+            &.center{
+                position: relative;
+                top: 50px;
+                left: 135px;
+                transform: translateX(-50%);
+            }
+            &.right{
+                right: -25px;
+                top: -20px;
+            }
+        }
+        .small-circle{
+            position: absolute;
+            @include box(70px, 70px);
+            background-color: rgb(175, 50, 50);
+            border-radius: 50%;
+            z-index: 1;
+            top: 60px;
+            left: 33px;
+            z-index: -1;
+        }
+    }
+    
+}

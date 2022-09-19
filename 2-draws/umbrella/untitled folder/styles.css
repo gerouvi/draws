@@ -1,0 +1,43 @@
+:root{
+    --marron-dark: rgba(168, 115, 17, 0.658);
+    --marron-light: rgba(216, 149, 49, 0.658);
+}
+*,
+*::before,
+*:after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #ddd;
+}
+.umbrella{
+    margin: 2em auto;
+    height: 60em;
+    width: 50em;
+    font-size: 10px;
+    border: 2px solid black;
+    color: rgba(233, 166, 67, 0.658);
+    background: 
+    /*Umbrella*/
+    radial-gradient(100% 200% at 50% 100%, red 50%, transparent 50.25%) 17em 2em / 16em 30em,
+    radial-gradient(100% 200% at 50% 100%, white 50%, transparent 50.25%) 10em 2em / 30em 30em,
+    radial-gradient(100% 200% at 50% 100%, orange 50%, transparent 50.25%) 5em 2em / 40em 30em,
+    /*Umbrella rounded*/
+    radial-gradient(120% 200% at 50% 100%, transparent 50%, orange 50.25%) 5em 32em / 5em 3em,
+    radial-gradient(120% 200% at 50% 100%, transparent 50%, white 50.25%) 10em 32em / 7em 3em,
+    radial-gradient(120% 200% at 50% 100%, transparent 50%, red 50.25%) 17em 32em / 16em 3em,
+    radial-gradient(120% 200% at 50% 100%, transparent 50%, white 50.25%) 33em 32em / 7em 3em,
+    radial-gradient(120% 200% at 50% 100%, transparent 50%, orange 50.25%) 40em 32em / 5em 3em,
+    /*Top Stick*/
+    radial-gradient(100% 100% at 100% 100%, var(--marron-dark) 100%, transparent 50.25%) 23em 0em / 2em 2em,
+    radial-gradient(100% 100% at 0% 100%, var(--marron-light) 100%, transparent 50.25%) 25em 0em / 2em 2em,
+    /*Stick*/
+    linear-gradient(90deg, var(--marron-dark) 50%, var(--marron-light) 50%) 23em 2em / 4em 50em,
+    /*Bottom Stick*/
+    radial-gradient(100% 200% at 50% 0%, transparent 1em, var(--marron-light) 1em 3em, var(--marron-dark) 3em 5em, transparent 5em) 23em 52em / 10em 5em,
+    /*Bottom Stick rounded*/
+    radial-gradient(100% 100% at 100% 100%, var(--marron-light) 100%, transparent) 29em 50em / 2em 2em,
+    radial-gradient(100% 100% at 0% 100%, var(--marron-dark) 100%, transparent) 31em 50em / 2em 2em;
+    background-repeat: no-repeat;
+}

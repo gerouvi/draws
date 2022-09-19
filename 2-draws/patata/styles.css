@@ -1,0 +1,159 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: aqua;
+    display: grid;
+    place-content: center;
+}
+.patata-container{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    /*border: 1px solid black;*/
+}
+.patata-head{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.patata-body{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+}
+.patata-face{
+    position: absolute;
+    width: 110px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    z-index: 2;
+}
+.eyesBrowns{
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 71px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eyeBrown-left, .eyeBrown-right{
+    /*height: 22px;
+    width: 10px;
+    border-radius: 50% 50% 50% 50% / 90% 90% 10% 10%;*/
+    border-bottom: 24px solid rgb(146, 86, 146);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-radius: 31px;
+
+}
+.eyes{
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 74px;
+    height: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eye-left, .eye-right{
+    background-color: black;
+    height: 8px;
+    width: 20px;
+    border-radius: 50%;
+}
+.bagEyes{
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 67px;
+    height: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bagEye-left, .bagEye-right{
+    background-color: rgb(70, 68, 68);
+    height: 4px;
+    width: 12px;
+    border-radius: 50%;
+}
+.cheeks{
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 71px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cheek-left, .cheek-right{
+    border-top: 34px solid rgb(146, 86, 146);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-radius: 31px;
+}
+.mouthZone{
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 30px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.mouth{
+    width: 20px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+}
+.chin{
+    width: 10px;
+    height: 3px;
+    background-color: rgb(146, 86, 146);
+    border-radius: 50%;
+}
+.shadow{
+    position: absolute;
+    background-color: rgb(170, 167, 167);
+    opacity: 0.6;
+    width: 200px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 210px;
+}

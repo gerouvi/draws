@@ -1,0 +1,463 @@
+$blue-gb: #a6e7ff;
+$black-border: #1a1a1a;
+$totoro-grey: #8b8076;
+$totoro-white: #f2f4e1;
+$totoro-leaf: #6ea547;
+$totoro-belly-shadow: #706f6f;
+$totoro-umbrella: #6d5776;
+$totoro-umbrella-dark: #59246e;
+$drop: #3ecef3;
+$border-w: 6px;
+@mixin ps{
+    content: "";
+    position: absolute;
+}
+@mixin box($w, $h){
+    width: $w;
+    height: $h;
+}
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: $blue-gb;
+    margin: 0;
+    margin-top: 150px;
+    position: relative;
+    top: 0;
+    max-height: 100vh;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+.drops{
+    position: absolute;
+    @include box(100%, 100%);
+    z-index: 1;
+    .drop{
+        position: absolute;
+        @include box(8px, 20px);
+        background-color: $drop;
+        border-radius: 20px;
+        box-shadow: -3px 0 3px 0 #6bdbf7;
+        
+    }
+    @for $i from 1 throught 10{
+        :nth-child(·{%i}){
+            left: $1 * 10%;
+        }
+    }
+    :nth-child(1){
+        position: absolute;
+        left: 10px;
+        top: -310px;
+        //animation: jump 4s 3s linear infinite;
+    }
+    :nth-child(2){
+        position: absolute;
+        top: -30px;
+        left: 250px;
+    }:nth-child(3){
+        position: absolute;
+        top: -50px;
+        left: 540px;
+    }:nth-child(4){
+        position: absolute;
+        top: 140px;
+        left: 140px;
+    }:nth-child(5){
+        position: absolute;
+        top: 150px;
+        left: 500px;
+    }:nth-child(6){
+        position: absolute;
+        top: 340px;
+        left: 60px;
+    }:nth-child(7){
+        position: absolute;
+        top: 300px;
+        left: 520px;
+    }
+    
+}
+*/
+.totoro-container{
+    display: grid;
+    place-items: center;
+    position: relative;
+    animation: jump 4s 3s cubic-bezier(0.76, 0.03, 0.46, 0.93) infinite;
+    
+   
+    .totoro{
+        top: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 360px;
+        
+        .ears{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            @include box(100%, 40px);
+            z-index: -1;
+
+            .ear{
+                position: relative;
+                @include box(20px, 30px);
+                border-left: $border-w solid $black-border;
+                border-right: $border-w solid $black-border;
+                margin: 0 50px;
+                background-color: $totoro-grey;
+                .triangle{
+                    position: absolute;
+                    top: -53px;
+                    background-color: inherit;
+                    @include box(32px, 60px);
+                    border-radius: 50% 50% 50% 50% / 85% 85% 15% 15%;
+                    left: 50%;
+                    transform: translate(-50%);
+                    border: $border-w solid $black-border;
+                    z-index: -1;
+                }
+            }
+        }
+        .face{
+            position: relative;
+            &::before{
+                top: 60px;
+                left: -60px;
+                @include ps;
+                @include box(10px, 10px);
+                background-color: black;
+                border-radius: 5px;
+                box-shadow: 0px 0px 0px 10px white, 112px 0 black, 112px 0 0 10px white;
+            }
+            &::after{
+                @include ps;
+                @include box(30px, 15px);
+                background-color: black;
+                left: -14px;
+                top: 58px;
+                border-radius: 50%;
+            }
+        }
+        .moustache-cont{
+            position: absolute;
+            left: -20px;
+            top: 70px;
+            transform: scale(1.1);
+            .moustache{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                @include box(100px, 20px);
+                overflow: hidden;
+                transform-origin: right center;
+                &:nth-child(1){
+                    top: 10px;
+                    transform: rotate(22deg);
+                    &::before{
+                        @include ps;
+                        @include box(110px, 40px);
+                        border-radius: 50%;
+                        border-top: 4px solid black;
+                        left: 5px
+                    }
+                    
+                }
+                &:nth-child(2){
+                    top: -5px;
+                    width: 120px;
+                    transform: rotate(8deg) translateX(-10px);
+                    left: -10px;
+                    &::before{
+                        @include ps;
+                        @include box(130px, 40px);
+                        border-radius: 50%;
+                        border-top: 4px solid black;
+                        left: 5px
+                    }
+                    
+                }
+                &:nth-child(3){
+                    top: -21px;
+                    &::before{
+                        @include ps;
+                        @include box(110px, 40px);
+                        border-radius: 50%;
+                        border-top: 4px solid black;
+                        left: 5px
+                    }
+                }
+            }
+            &.right{
+                left: 257px;
+                transform: scale(-1, 1);
+            }
+        }
+        .body{
+            position: absolute;
+            z-index: 1;
+            top: 100px;
+            
+            .belly{
+                position: relative;
+                @include box(290px, 320px);
+                background-color: $totoro-white;
+                border: $border-w solid $black-border;
+                border-radius: 50%;
+                .shadows{
+                    position: absolute;
+                    @include box(170px, 45px);
+                    left: 50%;
+                    transform: translate(-50%);
+                    top: 60px;
+                    display: flex;
+                    justify-content: space-between;
+                    .shadow{
+                        @include box(45px, 45px);
+                        border-radius: 50%;
+                        border-top: 8px solid $totoro-belly-shadow;
+                    }
+                    .first{
+                        position: relative;
+                        top: 3px;
+                        transform: rotate(-20deg);
+                    }
+                    .last{
+                        position: relative;
+                        top: 3px;
+                        transform: rotate(20deg);
+                    }
+                }
+            }
+            .arm{
+                position: absolute;
+                top: 40px;
+                right: -20px;
+                @include box(60px, 130px);
+                background-color: $totoro-grey;
+                border: $border-w solid $black-border;
+                border-radius: 50%;
+                /*transform-origin: bottom center;*/
+                transform: rotate(-25deg)
+                
+            }
+        }
+        .umbrella{
+            position: absolute;
+            @include box(220px, 282px);
+            right: -40px;
+            top: -135px;
+            z-index: 2;
+            .umbrella-top{
+                position: absolute;
+                @include box(100%, 70px);
+                overflow: hidden;
+                .umbrella-circle{
+                    @include box(220px, 200px);
+                    border-radius: 50%;
+                    background-color: $totoro-umbrella;
+                    border-top: 6px solid $black-border;
+                    border-left: 6px solid $black-border;
+                    border-right: $border-w solid $black-border;
+                    
+                    
+                    .umbrella-circle-color-right{
+                        position: absolute;
+                        @include box(220px, 200px);
+                        border-right: 40px solid $totoro-umbrella-dark;
+                        border-radius: 50%;
+                        transform: rotate(0deg);
+                        top: 4px;
+                        left: -4px;                        
+                        
+                    }
+                }
+                .umbrella-circles{
+                    position: absolute;
+                    @include box(50px, 30px);
+                    background-color: $blue-gb;
+                    border-radius: 50%;
+                    border-top: $border-w solid $black-border;
+                   
+                    
+                }
+                .first{
+                    left: 7px;
+                    bottom: -20px;
+                    transform: rotate(10deg);
+                }
+                .second{
+                    left: 48px;
+                    bottom: -18px;
+                    width: 67px;
+                    border-left: $border-w solid $black-border;
+                    border-right: $border-w solid $black-border;
+                }
+                .third{
+                    left: 108px;
+                    bottom: -18px;
+                    width: 67px;
+                    border-left: $border-w solid $black-border;
+                    border-right: $border-w solid $black-border;
+                }
+                .four{
+                    bottom: -20px;
+                    left: 164px;
+                    transform: rotate(-10deg);
+                    border-left: $border-w solid $black-border;
+                }
+                &:before{
+                    @include ps;
+                    @include box(60px, 30px);
+                    border-left: 6px solid black;
+                    border-top: 6px solid black;
+                    transform: rotate(-60deg);
+                    border-radius: 50%;
+                    bottom: 0;
+                    left: 37px;
+                }
+                
+            }
+            .umbrella-stick{
+                position: absolute;
+                @include box(7px, 290px);
+                background-color: $black-border;
+                border-radius: 10px;
+                bottom: 0;
+                left: 108px;
+                z-index: -1;
+            }
+        }
+        .box-1{
+            @include box(300px, 125px);
+            overflow: hidden;  
+            .circle{
+                @include box(300px, 320px);
+                border-radius: 50%;
+                background-color: $totoro-grey;
+                border: $border-w solid $black-border;
+                
+            }
+            .leaf-container{
+                position: absolute;
+                overflow: hidden;
+                @include box(300px, 320px);
+                /*border: 3px solid red;*/
+                border-radius: 50%;
+                top: -4px;
+                .leaf-topBorder{
+                    position: absolute;
+                    @include box(43px, 20px);
+                    border-radius: 29%;
+                    left: 50%;
+                    transform: translate(-50%);
+                    z-index: 1;
+                    border-top: 3px solid $black-border;
+                    
+                }
+                .leaf{
+                    position: absolute;
+                    width: 45px;
+                    height: 45px;
+                    transform: rotate(45deg) skew(10deg, 10deg);
+                    border: 3px solid $black-border;
+                    border-radius: 7px;
+                    left: 42.5%;
+                    top: -12px;
+                    background-color: $totoro-leaf;
+                }
+                
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                @include box(4px, 14px);
+                background-color: $black-border;
+                left: 49.7%;
+                top: -7px;
+                border-radius: 10px;
+                z-index: 2;
+            }
+        }
+        .box-2{
+            @include box(360px, 316px);
+            overflow: hidden;
+           
+            .circle{
+                position: relative;
+                top: -84px;
+                @include box(360px, 400px);
+                border-radius: 50%;
+                background-color: $totoro-grey;
+                border: $border-w solid $black-border;
+                
+            }
+        }
+        
+    }
+}
+.shadow-bottom{
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include box(360px, 50px);
+    background-color: rgb(134, 134, 134);
+    opacity: 0.4;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(1px);
+    animation: jump-shadow 4s 3s cubic-bezier(0.76, 0.03, 0.46, 0.93) infinite;
+}
+
+@keyframes jump{
+    20%{
+        top: 0px;
+        
+    }
+    40%{
+        top: -75px;
+    }
+    60%{
+        top: 0px;
+    }
+
+}
+@keyframes jump-shadow{
+    20%{
+        transform: translateX(-50%) scale(1);
+        filter: blur(1px);
+    }
+    40%{
+        background-color: rgba(0,0,0,0.2);
+        transform: translateX(-50%) scale(1.2);
+        filter: blur(3px);
+        
+    }
+    60%{
+        transform: translateX(-50%) scale(1);
+        filter: blur(1px);
+    }
+
+}
+@keyframes drop{
+    60%{
+        top: -310px;
+        
+    }
+    100%{
+        top: 500px;
+    }
+    
+
+}
+
